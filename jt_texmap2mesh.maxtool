@@ -1,0 +1,224 @@
+<graph version="0.50" uuid="1456bab6-ee88-4922-b436-8f6ece62d514">
+    <meta_info>
+        <graph_version guid="2ef2aaee-df8f-4f0c-b940-11c3694948ba" number="0.0.239" />
+        <description>Converts a image to mesh and vertex color.</description>
+        <customui>&#x09;rollout params &quot;Parameters&quot;&#x0A;&#x09;(&#x09;&#x0A;&#x09;&#x09;group &quot;Image Set up&quot;&#x0A;&#x09;&#x09;(&#x0A;&#x09;&#x09;mapbutton TexMap &quot;TexMap&quot; tooltip:&quot;TexMap&quot;&#x0A;&#x09;&#x09;spinner Image_width &quot;Image width&quot; range:[10, 10000, 10] type:#integer&#x0A;&#x09;&#x09;spinner Image_height &quot;Image height&quot; range:[10, 10000, 10] type:#integer&#x0A;&#x09;&#x09;&#x09;)&#x0A;&#x09;&#x09;group &quot;Mesh Control&quot;&#x0A;&#x09;&#x09;(&#x0A;&#x09;&#x09;spinner _XY_Size &quot; XY Size&quot; range:[0, 10000, 10] type:#float&#x0A;&#x09;&#x09;spinner Z_height &quot;Z height&quot; range:[-100000, 100000, 1] type:#float&#x09;&#x0A;&#x09;&#x09;spinner Definition__percent_ &quot;Definition %&quot; range:[0, 100, 100] type:#float&#x0A;&#x09;&#x09;spinner Faces__percent_ &quot;Faces %&quot; range:[0, 100, 100] type:#float&#x0A;&#x09;&#x09;&#x09;)&#x0A;&#x09;)</customui>
+    </meta_info>
+    <nodes>
+        <node operator="RenderToBitmap" id="0" position="-900:580" size="140:165" />
+        <node operator="GetPixels" id="4" position="-620:620" size="140:117" />
+        <node operator="CreateMesh" id="8" position="2229:749" size="140:141" />
+        <node operator="Output: geometry" id="11" position="3580:1060" size="140:69" />
+        <node operator="Parameter: Int32" id="6" name="Image width" min_value="10" max_value="10000" default_value="10" position="-2060:860" size="140:189" />
+        <node operator="Parameter: Int32" id="7" name="Image height" min_value="10" max_value="10000" default_value="10" position="-2060:1380" size="140:189" />
+        <node operator="Parameter: Texmap" id="12" name="TexMap" position="-1280:560" size="140:117" />
+        <node operator="Flatten" id="13" position="280:660" size="140:117" />
+        <node operator="Map" id="14" position="1600:620" size="140:141" />
+        <node operator="Count" id="15" position="740:580" size="140:117" />
+        <node operator="Range" id="16" position="1140:600" size="140:117" />
+        <node operator="Vector3" id="20" position="1334:1109" size="140:165" />
+        <node operator="Pass-through: Vector3" id="21" position="694:909" size="140:117" />
+        <node operator="Z" id="24" position="934:1329" size="140:117" />
+        <node operator="X" id="23" position="894:889" size="140:117" />
+        <node operator="Y" id="25" position="934:1169" size="140:117" />
+        <node operator="At" id="30" position="494:869" size="140:141" />
+        <node operator="Pass-through: Int32" id="28" position="202:869" size="140:117" />
+        <node operator="Multiply" id="17" position="1134:929" size="140:141" />
+        <node operator="AsFloat" id="18" position="714:1069" size="140:117" />
+        <node operator="Modulo" id="19" position="494:1009" size="140:141" />
+        <node operator="Multiply" id="22" position="1114:1109" size="140:141" />
+        <node operator="Parameter: Single" id="26" name=" XY Size" min_value="0" max_value="10000" default_value="10" system_units_value="false" position="-11:849" size="180:213" />
+        <node operator="Parameter: Single" id="29" name="Z height" min_value="-100000" max_value="100000" default_value="1" system_units_value="false" position="-6:1169" size="180:213" />
+        <node operator="Multiply" id="33" position="1114:1269" size="140:141" />
+        <node operator="Divide" id="34" position="489:1169" size="140:141" />
+        <node operator="AsFloat" id="35" position="714:1209" size="140:117" />
+        <node operator="Take" id="47" position="2069:989" size="140:141" />
+        <node operator="MultiplyByThree" id="49" position="2600:1980" size="140:117" />
+        <node operator="Array3" id="63" position="529:2029" size="140:165" />
+        <node operator="Map" id="64" position="1180:1660" size="140:141" />
+        <node operator="Array3" id="65" position="529:2189" size="140:165" />
+        <node operator="Concatenate" id="66" position="689:2129" size="140:141" />
+        <node operator="Multiply" id="96" position="100:1540" size="140:141" />
+        <node operator="Range" id="97" position="280:1580" size="140:117" />
+        <node operator="Slices" id="69" position="480:1600" size="140:141" />
+        <node operator="Map" id="70" position="829:1969" size="140:141" />
+        <node operator="Map" id="71" position="680:1640" size="140:141" />
+        <node operator="DropLast" id="72" position="480:1740" size="140:117" />
+        <node operator="Add" id="73" position="49:2109" size="140:141" />
+        <node operator="Pass-through: Int32" id="75" position="9:1909" size="140:117" />
+        <node operator="PlusOne" id="76" position="209:2029" size="140:117" />
+        <node operator="PlusOne" id="77" position="229:2229" size="140:117" />
+        <node operator="Flatten" id="78" position="1360:1700" size="140:117" />
+        <node operator="Flatten" id="82" position="1009:1929" size="140:117" />
+        <node operator="DropLast" id="1" position="860:1660" size="140:117" />
+        <node operator="Reverse" id="9" position="-360:640" size="140:117" />
+        <node operator="SetMapChannel" id="10" position="2469:889" size="140:189" />
+        <node operator="Constant" id="31" value="0" position="2249:889" size="140:93" />
+        <node operator="Count" id="32" position="1560:1760" size="140:117" />
+        <node operator="Constant" id="36" value="100.0" position="1920:1900" size="140:93" />
+        <node operator="Parameter: Single" id="37" name="Faces (percent)" min_value="0" max_value="100" default_value="100" system_units_value="false" position="2080:1980" size="140:213" />
+        <node operator="AsFloat" id="38" position="1920:1780" size="140:117" />
+        <node operator="DivideByThree" id="39" position="1740:1760" size="140:117" />
+        <node operator="Divide" id="40" position="2080:1840" size="140:141" />
+        <node operator="Multiply" id="41" position="2260:1940" size="140:141" />
+        <node operator="AsInt" id="42" position="2420:1960" size="140:117" />
+        <node operator="Constant" id="45" value="100.0" position="-719:890" size="140:93" />
+        <node operator="Divide" id="46" position="-391:917" size="140:141" />
+        <node operator="AsFloat" id="50" position="-931:1037" size="140:117" />
+        <node operator="Multiply" id="51" position="209:1010" size="140:141" />
+        <node operator="Divide" id="52" position="-371:1157" size="140:141" />
+        <node operator="AsFloat" id="53" position="-951:1217" size="140:117" />
+        <node operator="Multiply" id="54" position="200:1160" size="140:141" />
+        <node operator="Divide" id="55" position="-711:1097" size="140:141" />
+        <node operator="Multiply" id="56" position="-531:1097" size="140:141" />
+        <node operator="SetSmoothingGroups" id="57" position="3229:1009" size="180:141" />
+        <node operator="FaceCount" id="58" position="2709:1049" size="140:117" />
+        <node operator="Range" id="59" position="2889:1069" size="140:117" />
+        <node operator="Map" id="60" position="3069:1109" size="140:141" />
+        <node operator="IgnoreFirst" id="61" position="2909:1229" size="140:141" />
+        <node operator="Pass-through: Int32" id="62" position="2709:1209" size="140:117" />
+        <node operator="Constant" id="67" value="1" position="2709:1329" size="140:93" />
+        <node operator="Parameter: Single" id="5" name="Definition (percent)" min_value="0" max_value="100" default_value="100" system_units_value="false" position="-2060:1060" size="140:213" />
+        <node operator="Pass-through: Int32" id="44" position="-1291:1309" size="140:117" />
+        <node operator="Pass-through: Int32" id="48" position="-1331:909" size="140:117" />
+        <node operator="Divide" id="79" position="-1831:1129" size="140:141" />
+        <node operator="Constant" id="80" value="100.0" position="-2040:1280" size="140:93" />
+        <node operator="AsFloat" id="81" position="-1871:1429" size="140:117" />
+        <node operator="Multiply" id="83" position="-1671:1289" size="140:141" />
+        <node operator="AsInt" id="84" position="-1491:1309" size="140:117" />
+        <node operator="AsInt" id="85" position="-1491:949" size="140:117" />
+        <node operator="AsFloat" id="86" position="-1871:949" size="140:117" />
+        <node operator="Multiply" id="87" position="-1671:969" size="140:141" />
+        <node groupnode="Set Vertices as plane" id="27" position="-20:820" size="1503:635" bg_color="#ff646464">
+            <nodes>51,20,19,18,26,24,23,28,25,30,21,17,22,35,33,34,29</nodes>
+        </node>
+        <node groupnode="Set Indicies" id="2" position="0:1880" size="1158:483" bg_color="#ff646464">
+            <nodes>82,63,65,66,70,73,75,76,77</nodes>
+        </node>
+        <node groupnode="Set % of faces" id="43" position="1551:1731" size="1198:471" bg_color="#ff646464">
+            <nodes>41,37,36,39,40,42,49,38,32</nodes>
+        </node>
+        <node groupnode="Size and definition" id="88" position="-1880:880" size="738:675" bg_color="#ff646464">
+            <nodes>84,79,48,44,81,83,85,86,87</nodes>
+        </node>
+        <node groupnode="Set Vertex Color" id="68" position="2060:720" size="558:419" bg_color="#ff646464">
+            <nodes>10,31,8,47</nodes>
+        </node>
+        <node groupnode="Try to keep size" id="3" position="-960:860" size="738:482" bg_color="#ff646464">
+            <nodes>46,50,45,55,53,56,52</nodes>
+        </node>
+        <node groupnode="Set Smoothing group" id="74" position="2700:980" size="718:451" bg_color="#ff646464">
+            <nodes>57,62,59,60,67,61,58</nodes>
+        </node>
+    </nodes>
+    <connections>
+        <connection sourcenode="12" sourceport="0" destnode="0" destport="0" />
+        <connection sourcenode="48" sourceport="0" destnode="0" destport="1" />
+        <connection sourcenode="44" sourceport="0" destnode="0" destport="2" />
+        <connection sourcenode="0" sourceport="0" destnode="4" destport="0" />
+        <connection sourcenode="14" sourceport="0" destnode="8" destport="0" />
+        <connection sourcenode="47" sourceport="0" destnode="8" destport="1" />
+        <connection sourcenode="57" sourceport="0" destnode="11" destport="0" />
+        <connection sourcenode="9" sourceport="0" destnode="13" destport="0" />
+        <connection sourcenode="16" sourceport="0" destnode="14" destport="0" />
+        <connection sourcenode="20" sourceport="1" destnode="14" destport="1" />
+        <connection sourcenode="13" sourceport="0" destnode="15" destport="0" />
+        <connection sourcenode="15" sourceport="0" destnode="16" destport="0" />
+        <connection sourcenode="17" sourceport="0" destnode="20" destport="0" />
+        <connection sourcenode="22" sourceport="0" destnode="20" destport="1" />
+        <connection sourcenode="33" sourceport="0" destnode="20" destport="2" />
+        <connection sourcenode="30" sourceport="0" destnode="21" destport="0" />
+        <connection sourcenode="21" sourceport="0" destnode="24" destport="0" />
+        <connection sourcenode="21" sourceport="0" destnode="23" destport="0" />
+        <connection sourcenode="21" sourceport="0" destnode="25" destport="0" />
+        <connection sourcenode="13" sourceport="0" destnode="30" destport="0" />
+        <connection sourcenode="28" sourceport="0" destnode="30" destport="1" />
+        <connection sourcenode="51" sourceport="0" destnode="17" destport="0" />
+        <connection sourcenode="18" sourceport="0" destnode="17" destport="1" />
+        <connection sourcenode="19" sourceport="0" destnode="18" destport="0" />
+        <connection sourcenode="28" sourceport="0" destnode="19" destport="0" />
+        <connection sourcenode="48" sourceport="0" destnode="19" destport="1" />
+        <connection sourcenode="54" sourceport="0" destnode="22" destport="0" />
+        <connection sourcenode="35" sourceport="0" destnode="22" destport="1" />
+        <connection sourcenode="29" sourceport="0" destnode="33" destport="0" />
+        <connection sourcenode="24" sourceport="0" destnode="33" destport="1" />
+        <connection sourcenode="28" sourceport="0" destnode="34" destport="0" />
+        <connection sourcenode="48" sourceport="0" destnode="34" destport="1" />
+        <connection sourcenode="34" sourceport="0" destnode="35" destport="0" />
+        <connection sourcenode="78" sourceport="0" destnode="47" destport="0" />
+        <connection sourcenode="49" sourceport="0" destnode="47" destport="1" />
+        <connection sourcenode="42" sourceport="0" destnode="49" destport="0" />
+        <connection sourcenode="75" sourceport="0" destnode="63" destport="0" />
+        <connection sourcenode="76" sourceport="0" destnode="63" destport="1" />
+        <connection sourcenode="73" sourceport="0" destnode="63" destport="2" />
+        <connection sourcenode="1" sourceport="0" destnode="64" destport="0" />
+        <connection sourcenode="82" sourceport="1" destnode="64" destport="1" />
+        <connection sourcenode="76" sourceport="0" destnode="65" destport="0" />
+        <connection sourcenode="77" sourceport="0" destnode="65" destport="1" />
+        <connection sourcenode="73" sourceport="0" destnode="65" destport="2" />
+        <connection sourcenode="63" sourceport="0" destnode="66" destport="0" />
+        <connection sourcenode="65" sourceport="0" destnode="66" destport="1" />
+        <connection sourcenode="48" sourceport="0" destnode="96" destport="0" />
+        <connection sourcenode="44" sourceport="0" destnode="96" destport="1" />
+        <connection sourcenode="96" sourceport="0" destnode="97" destport="0" />
+        <connection sourcenode="97" sourceport="0" destnode="69" destport="0" />
+        <connection sourcenode="48" sourceport="0" destnode="69" destport="1" />
+        <connection sourcenode="66" sourceport="1" destnode="70" destport="1" />
+        <connection sourcenode="69" sourceport="0" destnode="71" destport="0" />
+        <connection sourcenode="72" sourceport="1" destnode="71" destport="1" />
+        <connection sourcenode="75" sourceport="0" destnode="73" destport="0" />
+        <connection sourcenode="48" sourceport="0" destnode="73" destport="1" />
+        <connection sourcenode="75" sourceport="0" destnode="76" destport="0" />
+        <connection sourcenode="73" sourceport="0" destnode="77" destport="0" />
+        <connection sourcenode="64" sourceport="0" destnode="78" destport="0" />
+        <connection sourcenode="70" sourceport="0" destnode="82" destport="0" />
+        <connection sourcenode="71" sourceport="0" destnode="1" destport="0" />
+        <connection sourcenode="4" sourceport="0" destnode="9" destport="0" />
+        <connection sourcenode="8" sourceport="0" destnode="10" destport="0" />
+        <connection sourcenode="31" sourceport="0" destnode="10" destport="1" />
+        <connection sourcenode="13" sourceport="0" destnode="10" destport="2" />
+        <connection sourcenode="47" sourceport="0" destnode="10" destport="3" />
+        <connection sourcenode="78" sourceport="0" destnode="32" destport="0" />
+        <connection sourcenode="39" sourceport="0" destnode="38" destport="0" />
+        <connection sourcenode="32" sourceport="0" destnode="39" destport="0" />
+        <connection sourcenode="38" sourceport="0" destnode="40" destport="0" />
+        <connection sourcenode="36" sourceport="0" destnode="40" destport="1" />
+        <connection sourcenode="40" sourceport="0" destnode="41" destport="0" />
+        <connection sourcenode="37" sourceport="0" destnode="41" destport="1" />
+        <connection sourcenode="41" sourceport="0" destnode="42" destport="0" />
+        <connection sourcenode="45" sourceport="0" destnode="46" destport="0" />
+        <connection sourcenode="50" sourceport="0" destnode="46" destport="1" />
+        <connection sourcenode="48" sourceport="0" destnode="50" destport="0" />
+        <connection sourcenode="26" sourceport="0" destnode="51" destport="0" />
+        <connection sourcenode="46" sourceport="0" destnode="51" destport="1" />
+        <connection sourcenode="56" sourceport="0" destnode="52" destport="0" />
+        <connection sourcenode="53" sourceport="0" destnode="52" destport="1" />
+        <connection sourcenode="44" sourceport="0" destnode="53" destport="0" />
+        <connection sourcenode="26" sourceport="0" destnode="54" destport="0" />
+        <connection sourcenode="52" sourceport="0" destnode="54" destport="1" />
+        <connection sourcenode="53" sourceport="0" destnode="55" destport="0" />
+        <connection sourcenode="50" sourceport="0" destnode="55" destport="1" />
+        <connection sourcenode="45" sourceport="0" destnode="56" destport="0" />
+        <connection sourcenode="55" sourceport="0" destnode="56" destport="1" />
+        <connection sourcenode="10" sourceport="0" destnode="57" destport="0" />
+        <connection sourcenode="60" sourceport="0" destnode="57" destport="1" />
+        <connection sourcenode="10" sourceport="0" destnode="58" destport="0" />
+        <connection sourcenode="58" sourceport="0" destnode="59" destport="0" />
+        <connection sourcenode="59" sourceport="0" destnode="60" destport="0" />
+        <connection sourcenode="61" sourceport="1" destnode="60" destport="1" />
+        <connection sourcenode="62" sourceport="0" destnode="61" destport="0" />
+        <connection sourcenode="67" sourceport="0" destnode="61" destport="1" />
+        <connection sourcenode="84" sourceport="0" destnode="44" destport="0" />
+        <connection sourcenode="85" sourceport="0" destnode="48" destport="0" />
+        <connection sourcenode="5" sourceport="0" destnode="79" destport="0" />
+        <connection sourcenode="80" sourceport="0" destnode="79" destport="1" />
+        <connection sourcenode="7" sourceport="0" destnode="81" destport="0" />
+        <connection sourcenode="81" sourceport="0" destnode="83" destport="0" />
+        <connection sourcenode="79" sourceport="0" destnode="83" destport="1" />
+        <connection sourcenode="83" sourceport="0" destnode="84" destport="0" />
+        <connection sourcenode="87" sourceport="0" destnode="85" destport="0" />
+        <connection sourcenode="6" sourceport="0" destnode="86" destport="0" />
+        <connection sourcenode="86" sourceport="0" destnode="87" destport="0" />
+        <connection sourcenode="79" sourceport="0" destnode="87" destport="1" />
+    </connections>
+</graph>
